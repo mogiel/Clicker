@@ -3,7 +3,7 @@ from time import sleep
 
 keyboard = Controller()
 
-keyboard
+# keyboard
 
 #
 # with keyboard.pressed(Key.cmd):

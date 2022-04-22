@@ -4,17 +4,11 @@
         "Wait": 0.5
     },
     {
-        "Set text": "Word",
+        "Set text": "Google chrome",
         "Wait": 0.75
-    },
-    {
-        "Press": "enter",
-        "Wait": 1.25
     },
     {
         "Press": "enter",
         "Wait": 0.75
     }
 ]
-
-
