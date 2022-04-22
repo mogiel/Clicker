@@ -1,0 +1,24 @@
+[
+    {
+        "Pressed": ["cmd", "s"],
+        "Wait": 0.5
+    },
+    {
+        "Set text": "Google chrome",
+        "Wait": 0.75
+    },
+    {
+        "Press": "enter",
+        "Wait": 0.75
+    },
+    {
+        "Set text": "unreal3",
+        "Wait": 0.75
+    },
+    {
+        "Press": "enter",
+        "Wait": 0.75
+    }
+]
+
+
