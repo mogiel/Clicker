@@ -4,12 +4,14 @@ from pynput.mouse import Button, Controller as Controller_Mouse
 from random import uniform
 from time import sleep
 
-keys = [
+keyboard_keys = [
     'alt', 'backspace', 'cmd', 'ctrl', 'delete', 'down', 'end', 'enter',
     'esc', 'f1', 'f10', 'f11', 'f12', 'f13', 'f14', 'f15', 'f16', 'f17', 'f18',
     'f19', 'f2', 'f20', 'f3', 'f4', 'f5', 'f6', 'f7', 'f8', 'f9', 'home',
     'insert', 'left', 'menu', 'pause', 'right', 'shift', 'space', 'tab', 'up'
 ]
+
+mouse_button = ['left', 'right', 'middle', 'x1', 'x2']
 
 
 class ScriptsRobot:
@@ -25,12 +27,14 @@ class ScriptsRobot:
             'Set mouse position': self.set_mouse_position,
             'Press mouse button': self.press_mouse_button,
             'Double click mouse button': self.double_click_mouse_button,
+            'Move mouse': self.move_mouse,
+            'Scroll': self.scroll,
         }
         self.script = self.open_script()
 
     @staticmethod
     def valid_key(key):
-        if key in keys:
+        if key in keyboard_keys:
             return True
 
     @staticmethod
@@ -69,13 +73,19 @@ class ScriptsRobot:
         self.mouse.press(getattr(Button, click, 'left'))
         self.mouse.release(getattr(Button, click, 'left'))
 
+    def move_mouse(self, coordinates):
+        self.mouse.move(coordinates['dx'], coordinates['dy'])
+
     def double_click_mouse_button(self, click):
         self.mouse.click(getattr(Button, click, 'left'), 2)
+
+    def scroll(self, steps: int):
+        self.mouse.scroll(0, steps)
 
     def action(self):
         for i in self.script:
             self.action_mapper.get(i[0])(i[1])
 
 
-test_class = ScriptsRobot("Pajacyk")
+test_class = ScriptsRobot("test")
 test_class.action()
