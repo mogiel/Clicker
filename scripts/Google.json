@@ -1,0 +1,10 @@
+[
+    {
+        "Set text": "https://www.youtube.com/watch?v=0-56qttPuSc",
+        "Wait": 0.75
+    },
+    {
+        "Press": "enter",
+        "Wait": 0.75
+    }
+]

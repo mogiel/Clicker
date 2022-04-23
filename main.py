@@ -15,8 +15,8 @@ mouse_button = ['left', 'right', 'middle', 'x1', 'x2']
 
 
 class ScriptsRobot:
-    def __init__(self, script_name):
-        self.script_name = script_name
+    def __init__(self, script_list: [str]):
+        self.script_list = script_list
         self.keyboard = Controller_Keyboard()
         self.mouse = Controller_Mouse()
         self.action_mapper = {
@@ -43,11 +43,12 @@ class ScriptsRobot:
 
     def open_script(self):
         script = []
-        with open(f'scripts/{self.script_name}.json') as file:
-            data = load(file)
-            for entity in data:
-                for item in entity.items():
-                    script.append(item)
+        for script_name in self.script_list:
+            with open(f'scripts/{script_name}.json') as file:
+                data = load(file)
+                for entity in data:
+                    for item in entity.items():
+                        script.append(item)
 
         return script
 
@@ -87,5 +88,5 @@ class ScriptsRobot:
             self.action_mapper.get(i[0])(i[1])
 
 
-test_class = ScriptsRobot("test")
+test_class = ScriptsRobot(["Open_Chrome", "Pajacyk"])
 test_class.action()

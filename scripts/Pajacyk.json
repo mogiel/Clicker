@@ -1,25 +1,5 @@
 [
     {
-        "Pressed": ["cmd", "s"],
-        "Wait": 0.5
-    },
-    {
-        "Set text": "Google chrome",
-        "Wait": 0.75
-    },
-    {
-        "Press": "enter",
-        "Wait": 0.75
-    },
-    {
-        "Set mouse position": {"x": 50, "y": 600},
-        "Wait": 0.5
-    },
-    {
-        "Pressed": ["ctrl", "t"],
-        "Wait": 0.5
-    },
-    {
         "Set text": "https://www.pajacyk.pl/",
         "Wait": 0.75
     },

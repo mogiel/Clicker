@@ -9,10 +9,26 @@
     },
     {
         "Press": "enter",
-        "Wait": 1.25
+        "Wait": 1.75
     },
     {
         "Press": "enter",
+        "Wait": 0.75
+    },
+    {
+        "Set text": "Hello my friend\nThis script is used to open Word\n\n\n\ne-mail: mogielski@protonmail.com",
+        "Wait": 0.75
+    },
+    {
+        "Pressed": ["ctrl_l", "a"],
+        "Wait": 0.5
+    },
+    {
+        "Pressed": ["ctrl_l", "e"],
+        "Wait": 0.5
+    },
+    {
+        "Press": "esc",
         "Wait": 0.75
     }
 ]
