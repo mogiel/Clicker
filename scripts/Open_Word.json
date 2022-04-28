@@ -1,6 +1,9 @@
 [
     {
-        "Pressed": ["cmd", "s"],
+        "Pressed": [
+            "cmd",
+            "s"
+        ],
         "Wait": 0.5
     },
     {
@@ -25,11 +28,10 @@
     },
     {
         "Pressed": ["ctrl_l", "e"],
-        "Wait": 0.5
+        "Wait": 0.75
     },
     {
-        "Press": "esc",
-        "Wait": 0.75
+        "Press": "esc"
     }
 ]
 
