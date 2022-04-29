@@ -3,10 +3,8 @@
 from json import load
 from random import uniform
 from time import sleep
-from typing import TypedDict, Optional, Callable
+from typing import TypedDict, Optional
 # external module
-from typing import Dict
-
 from pynput.keyboard import Key, Controller as Controller_Keyboard
 from pynput.mouse import Button, Controller as Controller_Mouse
 
@@ -17,18 +15,16 @@ mouse_button: list[str] = [e.name for e in Button]
 
 
 class SetMouse(TypedDict):
+    """Interface for set mouse position"""
     x: int
     y: int
 
 
 class MoveMouse(TypedDict):
+    """Interface for move mouse"""
     dx: int
     dy: int
     click: Optional[str]
-
-
-class ScriptException(Exception):
-    pass
 
 
 class ScriptsRobot:
@@ -64,10 +60,9 @@ class ScriptsRobot:
         :param: name of key
         :rtype: str
         """
-        if key in keyboard_keys:
+        if key in keyboard_keys or len(key) == 1:
             return key
-        elif len(key) == 1:
-            return key
+        return None
 
     @staticmethod
     def wait(wait: float = .25):
@@ -191,5 +186,3 @@ class ScriptsRobot:
 if __name__ == "__main__":
     test_class = ScriptsRobot(["Open_Word"])
     test_class.action()
-
-
